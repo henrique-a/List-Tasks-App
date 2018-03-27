@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewControllerDelegate.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, ViewControllerDelegate>
+@property (nonatomic, retain) NSMutableArray *tasks;
+@property NSMutableArray *filteredTasks;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
+@property BOOL isFiltered;
 
 @end
 
